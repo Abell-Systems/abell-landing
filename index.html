@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abell Systems — Autonomous Intelligence Engineering</title>
+  <meta name="description" content="Abell Systems builds autonomous intelligence architectures for high-value operational domains, starting with autonomous patent innovation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07090e;
+      --bg-surface: #0e121a;
+      --bg-surface-elevated: #141b26;
+      --border: #1e2638;
+      --border-focus: #3b82f6;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Top Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(7, 9, 14, 0.75);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #07090e;
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      background: #e2e8f0;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-muted);
+    }
+
+    /* Layout wrapper */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 6rem 0 4rem;
+      position: relative;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      max-width: 850px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, #f8fafc 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .lead {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    /* Section divider */
+    .section-header {
+      margin-top: 5rem;
+      margin-bottom: 2.5rem;
+      border-top: 1px solid var(--border);
+      padding-top: 3rem;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* Flagship Product Card */
+    .product-card {
+      background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg) 100%);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #38bdf8 0%, #2563eb 100%);
+    }
+
+    .product-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .product-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .product-tagline {
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-top: 0.25rem;
+    }
+
+    .product-description {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      max-width: 800px;
+    }
+
+    /* Architecture grid inside product */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .feature-item {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .feature-number {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .feature-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Terminal/Trace block */
+    .terminal-box {
+      background: #040609;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.825rem;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+      overflow-x: auto;
+    }
+
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-dim);
+      font-size: 0.75rem;
+    }
+
+    .terminal-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #334155;
+    }
+
+    .terminal-row {
+      display: flex;
+      gap: 1rem;
+      line-height: 1.7;
+    }
+
+    .t-label { color: var(--accent); }
+    .t-dim { color: var(--text-dim); }
+    .t-success { color: #4ade80; }
+
+    /* Principles Section */
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .principle-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+    }
+
+    .principle-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .principle-card p {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 6rem;
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <div class="brand-mark">A</div>
+        <span>Abell Systems</span>
+      </a>
+      <div class="nav-links">
+        <a href="#systems">Systems</a>
+        <a href="#principles">Philosophy</a>
+        <a href="https://github.com/Abell-Systems" target="_blank" class="btn btn-secondary">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        <span>AUTONOMOUS INTELLIGENCE ENGINEERING</span>
+      </div>
+      <h1>
+        <span>We build autonomous intelligence for high-value domains.</span>
+      </h1>
+      <p class="lead">
+        Abell Systems designs and deploys closed-loop agentic architectures that research, stress-test, and execute complex workflows without sacrificing operational rigor or evidence traceability.
+      </p>
+      <div class="hero-cta">
+        <a href="#systems" class="btn btn-primary">Explore Systems</a>
+        <a href="https://github.com/Abell-Systems" target="_blank" class="btn btn-secondary">View Organization</a>
+      </div>
+    </section>
+
+    <!-- Systems Section -->
+    <section id="systems">
+      <div class="section-header">
+        <div class="section-eyebrow">Production Architectures</div>
+        <h2 class="section-title">Flagship System</h2>
+      </div>
+
+      <div class="product-card">
+        <div class="product-header">
+          <div>
+            <div class="product-title">Patent Innovation Agent</div>
+            <div class="product-tagline">Autonomous R&D White-Space Discovery & Prior-Art Adversarial Testing</div>
+          </div>
+          <a href="https://github.com/Abell-Systems/ip-matchmaker" target="_blank" class="btn btn-secondary">
+            <span>Repository</span>
+            <span style="color: var(--text-dim)">↗</span>
+          </a>
+        </div>
+
+        <p class="product-description">
+          Mining global patent landscapes and market-pull technology calls to autonomously generate candidate inventions, challenge them against prior art in multi-agent adversarial loops, and output traceable innovation scorecards.
+        </p>
+
+        <!-- Technical Terminal Trace Preview -->
+        <div class="terminal-box">
+          <div class="terminal-header">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span style="margin-left: 0.5rem;">Pipeline Execution Feed &bull; Google ADK + Gemini 3.5</span>
+          </div>
+          <div class="terminal-row">
+            <span class="t-dim">1. INGEST</span>
+            <span>Parsing technology calls (Innoget) &rarr; Structured DemandSignal</span>
+          </div>
+          <div class="terminal-row">
+            <span class="t-dim">2. CLUSTER</span>
+            <span>Google Patents BigQuery &rarr; White-space score: 0.84 (High gap density)</span>
+          </div>
+          <div class="terminal-row">
+            <span class="t-dim">3. LOOP</span>
+            <span><span class="t-label">Inventor Agent</span> proposes candidate &harr; <span class="t-label">Adversarial Agent</span> stress-tests with prior art</span>
+          </div>
+          <div class="terminal-row">
+            <span class="t-dim">4. VERDICT</span>
+            <span class="t-success">&#10003; Innovation Governor validates novelty &amp; emits traceable ScoreCard</span>
+          </div>
+        </div>
+
+        <!-- 4 Key Architecture Pillars -->
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-number">01 / MARKET PULL</div>
+            <div class="feature-name">Demand Ingestion</div>
+            <div class="feature-text">Captures structured R&D demand signals from industrial technology calls instead of blind keyword queries.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-number">02 / DATA LAKE</div>
+            <div class="feature-name">Patent Clustering</div>
+            <div class="feature-text">Applies quantitative white-space algorithms over Google Patents on BigQuery to spot uncrowded technological territory.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-number">03 / ADVERSARIAL</div>
+            <div class="feature-name">Propose-Critique Loop</div>
+            <div class="feature-text">Inventor and Adversarial agents challenge candidates with citation-backed prior art to filter weak inventions early.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-number">04 / GOVERNANCE</div>
+            <div class="feature-name">Traceable Scorecard</div>
+            <div class="feature-text">Innovation Governor outputs evidence-backed evaluations ready for corporate R&D and patent filing decisions.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Principles Section -->
+    <section id="principles">
+      <div class="section-header">
+        <div class="section-eyebrow">Methodology</div>
+        <h2 class="section-title">Core Principles</h2>
+      </div>
+
+      <div class="principles-grid">
+        <div class="principle-card">
+          <h3>Taskmaster Workflows</h3>
+          <p>We do not build conversational chatbots. We build autonomous agent graphs that execute complex multi-step analysis, make decisions, and emit verifiable artifacts.</p>
+        </div>
+        <div class="principle-card">
+          <h3>Adversarial Validation</h3>
+          <p>Real-world decisions require internal critique. Our architectures embed specialized agents whose sole role is to find failure modes and prior-art conflicts before execution.</p>
+        </div>
+        <div class="principle-card">
+          <h3>Operational Continuity</h3>
+          <p>Every system is designed to observe, verify, and learn across cycles, ensuring long-term systemic stability and closed-loop adaptability.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <strong>Abell Systems</strong> &bull; Autonomous Intelligence Engineering
+      </div>
+      <div>
+        <a href="https://github.com/Abell-Systems" target="_blank" style="color: var(--text-muted); text-decoration: none;">github.com/Abell-Systems</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
