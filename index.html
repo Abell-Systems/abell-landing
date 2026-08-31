@@ -94,7 +94,7 @@
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 1.75rem;
       align-items: center;
     }
 
@@ -488,7 +488,23 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
     }
 
     @media (max-width: 860px) {
@@ -530,6 +546,7 @@
         <a href="#systems">Systems</a>
         <a href="#principles">Philosophy</a>
         <a href="#connect">Connect</a>
+        <a href="https://www.linkedin.com/company/abell-systems" target="_blank">LinkedIn</a>
         <a href="https://github.com/Abell-Systems" target="_blank" class="btn btn-secondary">GitHub</a>
       </div>
     </div>
@@ -692,7 +709,10 @@
           <p>Interested in deploying patent intelligence, exploring research collaborations, or discussing autonomous agent architectures?</p>
         </div>
         <div class="contact-channels">
-          <a href="https://github.com/Abell-Systems" target="_blank" class="btn btn-primary">
+          <a href="https://www.linkedin.com/company/abell-systems" target="_blank" class="btn btn-primary">
+            <span>LinkedIn Company Page</span>
+          </a>
+          <a href="https://github.com/Abell-Systems" target="_blank" class="btn btn-secondary">
             <span>GitHub Organization</span>
           </a>
           <a href="https://github.com/Abell-Systems/ip-matchmaker/issues" target="_blank" class="btn btn-secondary">
@@ -717,8 +737,9 @@
         </svg>
         <span><strong>Abell Systems</strong> &bull; Autonomous Intelligence Engineering</span>
       </div>
-      <div>
-        <a href="https://github.com/Abell-Systems" target="_blank" style="color: var(--text-muted); text-decoration: none;">github.com/Abell-Systems</a>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/company/abell-systems" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Abell-Systems" target="_blank">GitHub</a>
       </div>
     </div>
   </footer>
