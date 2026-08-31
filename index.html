@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abell Systems — Autonomous Intelligence Engineering</title>
-  <meta name="description" content="Abell Systems builds autonomous intelligence architectures for high-value operational domains, starting with autonomous patent innovation.">
+  <meta name="description" content="Abell Systems builds autonomous intelligence architectures to ensure the knowledge capable of changing the world reaches those who need it.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -221,6 +221,36 @@
       letter-spacing: -0.02em;
     }
 
+    /* Story / Origin Section */
+    .story-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .story-quote {
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.4;
+      color: #f8fafc;
+      margin-bottom: 1.5rem;
+    }
+
+    .story-body {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 850px;
+    }
+
+    .story-body p + p {
+      margin-top: 1rem;
+    }
+
     /* Flagship Product Card */
     .product-card {
       background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg) 100%);
@@ -400,6 +430,7 @@
         <span>Abell Systems</span>
       </a>
       <div class="nav-links">
+        <a href="#origin">Origin</a>
         <a href="#systems">Systems</a>
         <a href="#principles">Philosophy</a>
         <a href="https://github.com/Abell-Systems" target="_blank" class="btn btn-secondary">GitHub</a>
@@ -415,14 +446,36 @@
         <span>AUTONOMOUS INTELLIGENCE ENGINEERING</span>
       </div>
       <h1>
-        <span>We build autonomous intelligence for high-value domains.</span>
+        <span>Connecting human knowledge to where it matters most.</span>
       </h1>
       <p class="lead">
-        Abell Systems designs and deploys closed-loop agentic architectures that research, stress-test, and execute complex workflows without sacrificing operational rigor or evidence traceability.
+        Abell Systems designs and deploys closed-loop agentic architectures that bridge critical technological potential with urgent real-world demand—combining autonomous discovery with rigorous evidence traceability.
       </p>
       <div class="hero-cta">
         <a href="#systems" class="btn btn-primary">Explore Systems</a>
-        <a href="https://github.com/Abell-Systems" target="_blank" class="btn btn-secondary">View Organization</a>
+        <a href="#origin" class="btn btn-secondary">Read Our Story</a>
+      </div>
+    </section>
+
+    <!-- Origin / Purpose Section -->
+    <section id="origin">
+      <div class="section-header">
+        <div class="section-eyebrow">The Origin &bull; Mens et Manus</div>
+        <h2 class="section-title">Why Abell Systems Exists</h2>
+      </div>
+
+      <div class="story-box">
+        <div class="story-quote">
+          &ldquo;What if we could make sure that the knowledge capable of changing a life actually reaches the person who needs it?&rdquo;
+        </div>
+        <div class="story-body">
+          <p>
+            At MIT in Boston, our journey began with a stark observation: scientific breakthroughs and life-saving technologies were being created at an unprecedented rate, yet they remained trapped in fragmented patent databases, dense research papers, and siloed laboratories. Vital innovation was failing to connect with the human problems it was meant to solve.
+          </p>
+          <p>
+            Abell Systems was born from that conviction. We do not build AI to generate noise. We build autonomous intelligence architectures that systematically navigate technological landscapes, stress-test candidate solutions against reality, and ensure that valuable human insight is translated into verified action.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -518,8 +571,8 @@
           <p>Real-world decisions require internal critique. Our architectures embed specialized agents whose sole role is to find failure modes and prior-art conflicts before execution.</p>
         </div>
         <div class="principle-card">
-          <h3>Operational Continuity</h3>
-          <p>Every system is designed to observe, verify, and learn across cycles, ensuring long-term systemic stability and closed-loop adaptability.</p>
+          <h3>Evidence Traceability</h3>
+          <p>Conclusions without traceable evidence are meaningless. Every score, claim, and discovery produced by our systems cites verifiable ground truth.</p>
         </div>
       </div>
     </section>
