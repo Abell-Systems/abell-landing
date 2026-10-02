@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abell Systems — Abell Nexus</title>
-  <meta name="description" content="Abell Nexus connects real technology demands with Spanish patents and utility models. Every result links to its public source.">
+  <title>Abell Systems — Innovation White-Space Intelligence</title>
+  <meta name="description" content="Abell is an AI-powered innovation intelligence platform that discovers technology white spaces by connecting scientific knowledge, intellectual property, technology capabilities and market demand.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -493,9 +493,6 @@
     }
 
     @media (max-width: 860px) {
-      .nav-container { flex-wrap: wrap; gap: 0.75rem; }
-      .nav-links { flex-wrap: wrap; gap: 0.5rem 1.1rem; }
-      .product-card, .story-card, .contact-card { padding: 1.25rem; }
       .story-card {
         grid-template-columns: 1fr;
       }
@@ -503,15 +500,45 @@
         order: -1;
       }
     }
+
+    /* Redesign additions */
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 5rem; }
+    .sub { font-size: 1.3rem; color: var(--text); font-weight: 500; max-width: 760px; margin-bottom: 1rem; line-height: 1.45; }
+    .prose { color: var(--text-muted); max-width: 720px; margin-bottom: 1.5rem; }
+    .prose + .prose { margin-top: -0.5rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem; }
+    .grid .feature-item h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+    .callout { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; }
+    .callout em { font-style: normal; background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .flow { display: flex; flex-direction: column; align-items: stretch; gap: 0; font-family: var(--font-mono); font-size: 0.85rem; text-align: center; }
+    .flow > div { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 1rem; color: var(--text-muted); }
+    .flow > div + div { margin-top: 1.1rem; position: relative; }
+    .flow > div + div::before { content: '↓'; position: absolute; top: -1.15rem; left: 0; right: 0; color: var(--brand-magenta); line-height: 1.1rem; }
+    .flow > .core { background: var(--brand-gradient); border: 0; color: #fff; font-weight: 700; padding: 0.9rem 1rem; box-shadow: 0 6px 24px var(--brand-glow); }
+    .flow > .plus { border: 0; background: none; padding: 0; margin-top: 0.15rem; color: var(--text-dim); }
+    .flow > .plus::before { content: none; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; }
+    .steps .feature-item:last-child { border-color: var(--brand-magenta); }
+    .link { color: var(--brand-pink); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .link:hover { text-decoration: underline; }
+    .mini-cta { margin-top: 1.25rem; display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; }
+    .final { text-align: center; }
+    .final h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+    .final .hero-cta { justify-content: center; }
+    @media (max-width: 860px) {
+      .split { grid-template-columns: 1fr; gap: 1.5rem; }
+      .nav-links a:not(.btn) { display: none; }
+    }
+    @media (min-width: 861px) { .nav-links a:not(.btn) { display: inline; } }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
   <header>
     <div class="nav-container">
       <a href="#" class="brand">
-        <!-- Canonical SVG Vector Logo Mark -->
         <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true">
           <defs>
             <linearGradient id="nav-abell-gradient" x1="6" y1="10" x2="42" y2="38">
@@ -520,97 +547,162 @@
               <stop offset="100%" stop-color="#e0217a" />
             </linearGradient>
           </defs>
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M24 5 44 42 4 42Z M24 17 35 34 13 34Z"
-            fill="url(#nav-abell-gradient)"
-          />
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M24 5 44 42 4 42Z M24 17 35 34 13 34Z" fill="url(#nav-abell-gradient)" />
         </svg>
         <span class="brand-name">ABELL <strong>SYSTEMS</strong></span>
       </a>
       <div class="nav-links">
-        <a href="#origin">Origin</a>
-        <a href="#nexus">Nexus</a>
-        <a href="#principles">Philosophy</a>
-        <a href="#team">Team</a>
-        <a href="#connect">Connect</a>
-        <a href="https://www.linkedin.com/company/abell-systems" target="_blank">LinkedIn</a>
-        <a href="https://github.com/Abell-Systems" target="_blank" class="btn btn-secondary">GitHub</a>
+        <a href="#platform">Platform</a>
+        <a href="#technology">Technology</a>
+        <a href="#applications">Applications</a>
+        <a href="#demo">Demo</a>
+        <a href="#about">About</a>
+        <a href="#connect" class="btn btn-primary">Talk to us</a>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <!-- Hero Section -->
-    <section class="hero" lang="es">
-      <div class="badge">
-        <span class="badge-dot"></span>
-        <span>ABELL NEXUS &bull; PROTOTIPO FUNCIONAL &bull; CÁDIZ</span>
-      </div>
-      <h1>
-        <span class="gradient-text">Parte de una necesidad tecnológica, llega a la patente española que ya existe.</span>
-      </h1>
-      <p class="lead">
-        Abell Nexus conecta demandas reales de innovación con patentes y modelos de utilidad españoles mediante recuperación semántica. Cada resultado enlaza a su fuente pública para que puedas comprobarlo.
-      </p>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="badge"><span class="badge-dot"></span><span>INNOVATION WHITE-SPACE INTELLIGENCE</span></div>
+      <h1><span class="gradient-text">Discover where innovation should happen next.</span></h1>
+      <p class="sub">Abell is an AI-powered innovation intelligence platform that identifies technology white spaces before they become visible markets.</p>
+      <p class="lead">We combine scientific knowledge, patents, technology capabilities and market signals to uncover opportunities that conventional technology scouting and market intelligence overlook.</p>
       <div class="hero-cta">
-        <span class="pending">Acceso al prototipo bajo invitación</span>
-        <a href="#nexus" class="btn btn-secondary">Cómo funciona</a>
+        <a href="#platform" class="btn btn-primary">Explore Abell</a>
+        <a href="#how" class="btn btn-secondary">See how it works</a>
       </div>
-      <p class="brand-line" lang="en">Abell Systems &mdash; Connecting human knowledge to where it matters most.</p>
     </section>
 
-    <!-- Origin / Purpose Section -->
-    <section id="origin">
+    <!-- Problem -->
+    <section id="problem">
       <div class="section-header">
-        <div class="section-eyebrow">The Origin &bull; Mens et Manus</div>
-        <h2 class="section-title">Why Abell Systems Exists</h2>
+        <div class="section-eyebrow">The problem</div>
+        <h2 class="section-title">The next opportunity is rarely visible in a single dataset.</h2>
       </div>
+      <p class="prose">Innovation intelligence is fragmented across scientific literature, patents, companies, technologies, products and market signals.</p>
+      <p class="prose">Existing tools can help organizations search these sources individually. The problem is identifying meaningful relationships between them — especially relationships that have not yet become obvious opportunities.</p>
+      <div class="grid">
+        <div class="feature-item"><div class="feature-number">SCIENCE</div><div class="feature-text">What is being discovered?</div></div>
+        <div class="feature-item"><div class="feature-number">TECHNOLOGY &amp; IP</div><div class="feature-text">What capabilities exist, who develops them and how are they connected?</div></div>
+        <div class="feature-item"><div class="feature-number">MARKET &amp; DEMAND</div><div class="feature-text">Where are needs emerging that technology has not yet fully addressed?</div></div>
+      </div>
+      <p class="callout"><em>Abell connects these signals to reveal the spaces between them.</em></p>
+    </section>
 
-      <div class="story-card">
+    <!-- Platform: value prop + white space -->
+    <section id="platform">
+      <div class="section-header">
+        <div class="section-eyebrow">The platform</div>
+        <h2 class="section-title">From fragmented signals to innovation opportunities.</h2>
+      </div>
+      <div class="split">
+        <div class="flow">
+          <div>Scientific Knowledge</div><div class="plus">+</div>
+          <div>Patents &amp; IP</div><div class="plus">+</div>
+          <div>Technology</div><div class="plus">+</div>
+          <div>Companies</div><div class="plus">+</div>
+          <div>Market Signals</div><div class="plus">+</div>
+          <div>Demand</div>
+          <div class="core">ABELL INTELLIGENCE</div>
+          <div>Innovation White Spaces</div>
+          <div>Technology Opportunities</div>
+        </div>
         <div>
-          <div class="story-quote">
-            &ldquo;What if we could make sure that the knowledge capable of changing a life actually reaches the person who needs it?&rdquo;
-          </div>
+          <h3 class="story-quote">A white space is more than an empty market.</h3>
           <div class="story-body">
-            <p>
-              At MIT in Boston, our journey began with a stark observation: scientific breakthroughs and life-saving technologies were being created at an unprecedented rate, yet they remained trapped in fragmented patent databases, dense research papers, and siloed laboratories. Vital innovation was failing to connect with the human problems it was meant to solve.
-            </p>
-            <p>
-              Abell Systems was born from that conviction. We do not build AI to generate noise. We build systems that connect patents, research and real needs, and ensure that valuable human insight is translated into verified action.
-            </p>
+            <p>An apparent gap does not necessarily represent an opportunity.</p>
+            <p>Abell looks for evidence across multiple technological and market signals to distinguish unexplored spaces from areas where technology, demand or intellectual property are already sufficiently developed.</p>
+            <p><strong>We identify evidence-backed opportunities emerging between existing knowledge, technology and demand.</strong></p>
           </div>
-        </div>
-        <div class="story-visual">
-          <img src="abell-systems.jpeg" alt="Abell Systems Penrose Symbol">
         </div>
       </div>
     </section>
 
-    <!-- Nexus Section -->
-    <section id="nexus" lang="es">
+    <!-- How it works -->
+    <section id="how">
       <div class="section-header">
-        <div class="section-eyebrow">Producto</div>
-        <h2 class="section-title">Abell Nexus</h2>
+        <div class="section-eyebrow">MAP → CONNECT → DETECT → MATCH</div>
+        <h2 class="section-title">From signal to opportunity.</h2>
       </div>
+      <div class="steps">
+        <div class="feature-item"><div class="feature-number">01</div><div class="feature-name">Map</div><div class="feature-text">Build a structured view of scientific, technological, IP and market signals.</div></div>
+        <div class="feature-item"><div class="feature-number">02</div><div class="feature-name">Connect</div><div class="feature-text">Identify relationships between technologies, organizations, patents, research and demand.</div></div>
+        <div class="feature-item"><div class="feature-number">03</div><div class="feature-name">Detect</div><div class="feature-text">Surface unexplored combinations, gaps and emerging technology spaces.</div></div>
+        <div class="feature-item"><div class="feature-number">04</div><div class="feature-name">Match</div><div class="feature-text">Connect identified opportunities with technologies, organizations and capabilities able to address them.</div></div>
+      </div>
+      <p class="prose" style="margin-top:1.5rem">First we discover the opportunity; then we look for who can solve it.</p>
+    </section>
 
-      <div class="product-card">
-        <div class="product-header">
-          <div>
-            <div class="product-title">De la demanda al activo español</div>
-            <div class="product-tagline">Recuperación semántica con trazabilidad hasta la fuente</div>
+    <!-- Technology: Nexus + IP Matchmaker -->
+    <section id="technology">
+      <div class="section-header">
+        <div class="section-eyebrow">Technology</div>
+        <h2 class="section-title">One platform, two components.</h2>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div class="product-card" style="padding:2rem">
+          <div class="product-title">Abell Nexus</div>
+          <div class="product-tagline">The intelligence layer behind Abell.</div>
+          <p class="prose" style="margin-top:1rem">Nexus is the research infrastructure behind Abell's innovation intelligence. It provides the mechanisms for structuring, connecting and analysing heterogeneous technology and knowledge sources.</p>
+          <div class="flow" style="margin:1rem 0">
+            <div>ABELL</div>
+            <div>Discovery · Intelligence</div>
+            <div class="core">NEXUS</div>
           </div>
-          <a href="https://github.com/Abell-Systems/nexus" target="_blank" rel="noopener" class="btn btn-secondary" lang="en">
-            <span>Repository</span>
-            <span style="color: var(--text-dim)">↗</span>
-          </a>
+          <a class="link" href="https://github.com/Abell-Systems/nexus" target="_blank">Explore the technology →</a>
         </div>
+        <div class="product-card" style="padding:2rem">
+          <div class="product-title">IP Matchmaker</div>
+          <div class="product-tagline">From opportunity to technological capability.</div>
+          <p class="prose" style="margin-top:1rem">Once an innovation space is identified, Abell can map relevant technologies, organizations and intellectual property to understand who is already working in the space and where capabilities are missing.</p>
+          <div class="flow" style="margin:1rem 0">
+            <div class="core">WHITE SPACE</div>
+            <div>Technologies → Patents / IP</div>
+            <div>Organizations → Capabilities</div>
+            <div>Potential matches</div>
+          </div>
+          <a class="link" href="https://github.com/Abell-Systems/ip-matchmaker" target="_blank">Explore IP Matchmaker →</a>
+        </div>
+      </div>
+    </section>
 
-        <p class="product-description">
-          Nexus no genera texto ni inventa coincidencias: ordena activos que existen y te da el camino a la fuente.
-        </p>
+    <!-- Moat -->
+    <section id="moat">
+      <div class="section-header">
+        <div class="section-eyebrow">Defensibility</div>
+        <h2 class="section-title">The advantage is not another AI search box.</h2>
+      </div>
+      <p class="prose">Abell is designed around the relationships between knowledge, technology, intellectual property and demand — not simply the retrieval of documents.</p>
+      <div class="grid">
+        <div class="feature-item"><h3>Multi-source intelligence</h3><div class="feature-text">Combine heterogeneous signals rather than analysing each source in isolation.</div></div>
+        <div class="feature-item"><h3>Structured relationships</h3><div class="feature-text">Model relationships between technologies, organizations, IP, scientific knowledge and demand.</div></div>
+        <div class="feature-item"><h3>Evidence-based discovery</h3><div class="feature-text">Make innovation opportunities traceable to the signals and relationships supporting them.</div></div>
+      </div>
+    </section>
 
+    <!-- Applications -->
+    <section id="applications">
+      <div class="section-header">
+        <div class="section-eyebrow">Applications</div>
+        <h2 class="section-title">Built for organizations making technology decisions.</h2>
+      </div>
+      <div class="grid">
+        <div class="feature-item"><h3>Corporate Innovation</h3><div class="feature-text">Identify emerging technologies and unexplored opportunity spaces.</div></div>
+        <div class="feature-item"><h3>R&amp;D</h3><div class="feature-text">Discover research directions and technological gaps.</div></div>
+        <div class="feature-item"><h3>Investors</h3><div class="feature-text">Explore emerging technology spaces and identify companies, capabilities and IP around them.</div></div>
+        <div class="feature-item"><h3>Universities &amp; Technology Transfer</h3><div class="feature-text">Identify opportunities for technology transfer and industrial collaboration.</div></div>
+      </div>
+    </section>
+
+    <!-- Demo / evidence -->
+    <section id="demo">
+      <div class="section-header">
+        <div class="section-eyebrow">Evidence &bull; Working prototype</div>
+        <h2 class="section-title">See it work on a real demand.</h2>
+      </div>
+      <div lang="es">
         <div class="demo" aria-label="Ejemplo real">
           <p class="demo-tag">Demanda real (Innoget)</p>
           <p class="demo-need">Seeking for new available technologies for water quality measurement.<small>Sensores de calidad de agua, monoparámetro o multiparámetro; abiertos a cualquier tecnología.</small></p>
@@ -621,24 +713,6 @@
             <li><span class="demo-rank">3</span><div><b>Sensor, sonda y equipo para la medida de demanda química de oxígeno soluble basado en detección amperométrica</b><span class="id">ES-2595114-B1 &bull; patente</span></div></li>
           </ol>
           <p class="demo-note">Primeros 3 de 5 resultados, tal como los devuelve el prototipo, sin selección ni retoques. El orden es por similitud y no garantiza que el activo resuelva la demanda.</p>
-        </div>
-
-        <div class="feature-grid">
-          <div class="feature-item">
-            <div class="feature-number">01</div>
-            <div class="feature-name">Eliges una demanda</div>
-            <div class="feature-text">Demandas reales de innovación abierta, ingeridas desde Innoget, con su enlace de origen.</div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-number">02</div>
-            <div class="feature-name">Nexus ordena los activos</div>
-            <div class="feature-text">Un modelo de embeddings multilingüe, congelado y versionado, compara la demanda con las patentes y modelos de utilidad españoles. Sin puntuaciones que aparenten una precisión que no tenemos.</div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-number">03</div>
-            <div class="feature-name">Compruebas cada resultado</div>
-            <div class="feature-text">Titular, resumen, solicitante y enlaces a Google Patents y Espacenet. Tú decides si el activo encaja.</div>
-          </div>
         </div>
 
         <div class="figures">
@@ -658,30 +732,33 @@
           </div>
         </div>
 
-        <p class="attribution">Datos: &laquo;Google Patents Public Data&raquo;, de IFI CLAIMS Patent Services y Google, con licencia Creative Commons Attribution 4.0 International.</p>
+        </div>
+      <p class="attribution">Datos: &laquo;Google Patents Public Data&raquo;, de IFI CLAIMS Patent Services y Google, con licencia Creative Commons Attribution 4.0 International.</p>
+      <div class="mini-cta"><a class="link" href="https://github.com/Abell-Systems/nexus" target="_blank">Explore Nexus →</a></div>
+
+      <h3 class="section-title" style="font-size:1.5rem; margin-top:3rem">Abell turns technology intelligence into decisions.</h3>
+      <div class="grid" style="margin-top:1.5rem">
+        <div class="feature-item"><h3>Discover</h3><div class="feature-text">Find emerging and unexplored technology spaces.</div></div>
+        <div class="feature-item"><h3>Evaluate</h3><div class="feature-text">Understand the scientific, technological and IP evidence behind them.</div></div>
+        <div class="feature-item"><h3>Act</h3><div class="feature-text">Identify technologies, organizations and capabilities relevant to the opportunity.</div></div>
       </div>
     </section>
 
-    <!-- Engineering Principles Section -->
-    <section id="principles">
+    <!-- Vision / About -->
+    <section id="about">
       <div class="section-header">
-        <div class="section-eyebrow">Methodology</div>
-        <h2 class="section-title">Core Principles</h2>
+        <div class="section-eyebrow">Vision &bull; Mens et Manus</div>
+        <h2 class="section-title">A map of where technology can go next.</h2>
       </div>
-
-      <div class="principles-grid">
-        <div class="principle-card">
-          <h3>Evidence Traceability</h3>
-          <p>Conclusions without traceable evidence are meaningless. Every result we show links to its public source, so you can check it yourself.</p>
+      <div class="story-card">
+        <div>
+          <div class="story-body">
+            <p>The long-term vision of Abell is an intelligence layer connecting scientific knowledge, technology, intellectual property and market demand at scale.</p>
+            <p>As these relationships become richer, Abell can move from finding existing technologies to identifying where new technological opportunities are emerging.</p>
+            <p>Abell began at MIT in Boston, from a simple observation: scientific breakthroughs were being created faster than they could reach the people and problems they could help.</p>
+          </div>
         </div>
-        <div class="principle-card">
-          <h3>Frozen, Versioned Data</h3>
-          <p>The system starts only if its data verifies against a recorded fingerprint. What you see is a specific, reproducible version, not a moving target.</p>
-        </div>
-        <div class="principle-card">
-          <h3>Honest About Limits</h3>
-          <p>We do not display scores that imply precision we have not measured. What is not yet validated is stated next to what works.</p>
-        </div>
+        <div class="story-visual"><img src="abell-systems.jpeg" alt="Abell Systems Penrose Symbol"></div>
       </div>
     </section>
 
@@ -699,53 +776,25 @@
       <p class="team-place">Abell Systems, C&aacute;diz (Andaluc&iacute;a).</p>
     </section>
 
-    <!-- Connect / Contact Section -->
+    <!-- Final CTA -->
     <section id="connect">
-      <div class="section-header">
-        <div class="section-eyebrow">Collaboration</div>
-        <h2 class="section-title">Connect with Abell Systems</h2>
-      </div>
-
-      <div class="contact-card">
-        <div class="contact-info">
-          <h3>Talk to Us</h3>
-          <p>Interested in trying Abell Nexus or collaborating on research? Reach us on LinkedIn or open an issue on the project repository.</p>
-        </div>
-        <div class="contact-channels">
-          <a href="https://www.linkedin.com/company/abell-systems" target="_blank" class="btn btn-primary">
-            <span>LinkedIn Company Page</span>
-          </a>
-          <a href="https://github.com/Abell-Systems" target="_blank" class="btn btn-secondary">
-            <span>GitHub Organization</span>
-          </a>
-          <a href="https://github.com/Abell-Systems/nexus/issues" target="_blank" class="btn btn-secondary">
-            <span>Inquiries &amp; Issues</span>
-          </a>
+      <div class="section-header final">
+        <h2>Find the opportunities others haven't mapped yet.</h2>
+        <div class="hero-cta">
+          <a href="https://www.linkedin.com/company/abell-systems" target="_blank" class="btn btn-primary">Talk to Abell</a>
+          <a href="https://github.com/Abell-Systems/nexus" target="_blank" class="btn btn-secondary">Explore our technology</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="container footer-content">
       <div style="display: flex; align-items: center; gap: 0.75rem;">
         <svg class="logo-mark" style="width: 20px; height: 20px;" viewBox="0 0 48 48" aria-hidden="true">
-          <defs>
-            <linearGradient id="footer-abell-gradient" x1="6" y1="10" x2="42" y2="38">
-              <stop offset="0%" stop-color="#7c3fc4" />
-              <stop offset="55%" stop-color="#b23a9a" />
-              <stop offset="100%" stop-color="#e0217a" />
-            </linearGradient>
-          </defs>
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M24 5 44 42 4 42Z M24 17 35 34 13 34Z"
-            fill="url(#footer-abell-gradient)"
-          />
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M24 5 44 42 4 42Z M24 17 35 34 13 34Z" fill="url(#nav-abell-gradient)" />
         </svg>
-        <span><strong>Abell Systems</strong> &bull; C&aacute;diz, Andaluc&iacute;a</span>
+        <span><strong>Abell Systems</strong> &bull; Innovation White-Space Intelligence</span>
       </div>
       <div class="footer-links">
         <a href="https://www.linkedin.com/company/abell-systems" target="_blank">LinkedIn</a>
