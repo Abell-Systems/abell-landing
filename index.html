@@ -518,7 +518,8 @@
     .flow > div + div::before { content: '↓'; position: absolute; top: -1.15rem; left: 0; right: 0; color: var(--brand-magenta); line-height: 1.1rem; }
     .flow > .core { background: var(--brand-gradient); border: 0; color: #fff; font-weight: 700; padding: 0.9rem 1rem; box-shadow: 0 6px 24px var(--brand-glow); }
     .flow > .plus { border: 0; background: none; padding: 0; margin-top: 0.15rem; color: var(--text-dim); }
-    .flow > .plus::before { content: none; }
+    .flow > .plus::before, .flow > .plus + div::before { content: none; }
+    .flow > .plus + div { margin-top: 0.15rem; }
     .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; }
     .steps .feature-item:last-child { border-color: var(--brand-magenta); }
     .link { color: var(--brand-pink); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
